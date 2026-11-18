@@ -36,12 +36,14 @@ Deixar algo de fora foi uma decisão consciente: o foco deste ciclo era o funcio
 
 Arquivos: [Casos_de_Teste_Login.docx](Casos_de_Teste_Login.docx) e [Caderno_de_Teste_Login.xlsx](Caderno_de_Teste_Login.xlsx)
 
-| Caso | O que testei | Resultado esperado |
-|---|---|---|
-| CT01 | Login com usuário e senha válidos | Vai para a Secure Area com a mensagem "You logged into a secure area!" |
-| CT02 | Login com senha errada | Continua no login com a mensagem "Your password is invalid!" |
-| CT03 | Login com usuário que não existe | Continua no login com a mensagem "Your username is invalid!" |
-| CT04 | Login com os campos vazios | Continua no login com a mensagem "Your username is invalid!" |
+| Caso | O que testei | Resultado esperado | Status | Evidência |
+|---|---|---|---|---|
+| CT-001 | Login com usuário e senha válidos | Vai para a Secure Area com a mensagem "You logged into a secure area!" | ✅ PASSOU | [print](prints/CT-001-login-valido.png) |
+| CT-002 | Login com senha errada | Continua no login com a mensagem "Your password is invalid!" | ✅ PASSOU | [print](prints/CT-002-senha-errada.png) |
+| CT-003 | Login com usuário que não existe | Continua no login com a mensagem "Your username is invalid!" | ✅ PASSOU | [print](prints/CT-003-usuario-inexistente.png) |
+| CT-004 | Login com os campos vazios | Continua no login com a mensagem "Your username is invalid!" | ✅ PASSOU | [print](prints/CT-004-campos-vazios.png) |
+
+Os 4 casos passaram, mas os casos CT-002 e CT-003 mostraram o problema de segurança registrado no BUG-001 (seção 5).
 
 ## 4. Cenários em BDD (Gherkin)
 
@@ -76,5 +78,6 @@ modulo-3-fluxo-completo-login/
 ├── Caderno_de_Teste_Login.xlsx            ← execução dos casos
 ├── cenarios-login.feature                 ← cenários BDD em Gherkin
 ├── Cenarios_BDD_Login.docx                ← os mesmos cenários em Word
-└── Bug_Report_BUG-001.docx                ← bug de segurança no login
+├── Bug_Report_BUG-001.docx                ← bug de segurança no login
+└── prints/                                ← evidências dos casos CT-001 a CT-004
 ```

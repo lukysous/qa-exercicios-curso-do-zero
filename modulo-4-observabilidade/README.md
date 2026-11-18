@@ -166,39 +166,34 @@ algo que a tela, sozinha, não deixa claro.
 
 ## 5. Erro na tela × erro só no log
 
-✏️ *Reescreva com suas palavras. Base:*
+O **erro na tela** é o que o usuário vê: uma mensagem de "algo deu errado", um botão que
+não responde, uma página em branco. É fácil de notar, mas quase nunca diz a causa. Ele
+mostra o sintoma, não o motivo.
 
-Um **erro na tela** é aquele que o usuário vê: uma mensagem "Algo deu errado", um
-botão que some, uma página em branco. Ele é fácil de perceber, mas muitas vezes
-**não diz a causa** – só mostra o sintoma.
+O **erro que só aparece no log** (Console, aba Network, logs do servidor) não aparece para
+quem testa só clicando. Vi isso nesta missão: nas páginas de status 404 e 500, a tela parecia
+uma página comum, só com um texto diferente, mas a aba Network mostrava o código em vermelho
+e o Console registrava o erro. Na página `/javascript_error` a tela carregou normalmente, e
+só no Console apareceu o `TypeError`.
 
-Um **erro que só aparece nos logs** (Console, aba Network, logs do servidor) é
-invisível para quem testa só clicando. Nesta missão, isso ficou claro: nas páginas
-de status 404 e 500 a tela parecia normal, só mudava um texto, mas a aba Network
-mostrava os códigos em vermelho e o Console registrava `Failed to load resource`.
-Na página `/javascript_error` a tela carregou sem nenhum aviso, mas havia um
-`TypeError` no Console.
-
-Por isso, o erro de log é **mais perigoso**: ele pode passar despercebido em um teste
-superficial e chegar à produção. Por outro lado, ele é **mais útil para a investigação**,
-porque traz detalhes técnicos (tipo do erro, arquivo, linha, URL, status code) que
-apontam onde está a causa. Um QA que olha os logs não reporta só "não funciona" –
-reporta **o que** falhou, **onde** e **com qual código**.
+Por isso o erro que fica só no log é o **mais perigoso**: passa batido num teste rápido e
+pode chegar até o cliente. Ao mesmo tempo, ele é o **mais útil para investigar**, porque traz
+o tipo do erro, o arquivo, a linha, a URL e o status code. Com isso eu não reporto só
+"não funciona": reporto **o que** falhou, **onde** e **com qual código**.
 
 ---
 
 ## 6. Conclusão
 
-✏️ Escreva 3 a 5 linhas: o que você aprendeu, o que mais te surpreendeu e como pretende
-usar o DevTools nos seus próximos testes. Exemplo de ideia: "A partir de agora, todo
-bug que eu reportar vai incluir print do Console e da aba Network".
+Aprendi que testar não é só olhar a tela: o DevTools mostra o que o sistema está fazendo por trás. O que mais me surpreendeu foi ver páginas com erro 404 e 500 que, para o usuário, pareciam normais. Também aprendi a separar o erro real do sistema do ruído do ambiente, como extensões do navegador e scripts de terceiros, para não abrir bug falso. Nos meus próximos testes, vou deixar o DevTools aberto, e todo bug que eu reportar vai ter o print do Console e da aba Network.
 
 ---
 
 ## Estrutura da pasta
 
 ```
-Observabilidade/
-├── README.md        ← este relatório
-└── prints/          ← evidências (prints do DevTools)
+modulo-4-observabilidade/
+├── README.md                       ← este relatório
+├── Relatorio_Observabilidade.docx  ← o mesmo relatório em Word
+└── prints/                         ← evidências (prints do DevTools)
 ```
