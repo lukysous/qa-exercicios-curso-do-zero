@@ -12,6 +12,7 @@ Sou **Lucas Souza**, profissional de TI com mais de 4 anos em suporte técnico e
 
 | Módulo | Missão | O que mostra | Ferramentas |
 |---|---|---|---|
+| [2](modulo-2-fundamentos) | Classificando bugs e tipos de teste | 6 problemas classificados em defeito, falha ou incidente, com tipo e nível de teste | AcademyBugs · Chrome |
 | [3](modulo-3-fluxo-completo-login) | Fluxo completo de teste: tela de login | Planejamento, casos de teste, cenários BDD e bug report de segurança | Gherkin · Chrome |
 | [4](modulo-4-observabilidade) | Observabilidade com DevTools | Investigação de erros no Console e na aba Network, status codes | Chrome DevTools |
 | [5](modulo-5-dia-a-dia) | Dia a dia do QA | Teste exploratório e regressivo, 4 bugs reportados, ciclo de vida do bug | Planilhas · AcademyBugs |
