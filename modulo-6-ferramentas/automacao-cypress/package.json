@@ -1,0 +1,17 @@
+{
+  "name": "automacao-cypress",
+  "version": "1.0.0",
+  "description": "Primeira automação: teste de login no the-internet.herokuapp.com com Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^16.3.0"
+  }
+}
