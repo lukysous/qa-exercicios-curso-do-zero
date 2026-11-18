@@ -53,7 +53,7 @@ Banco usado: [W3Schools – Try SQL](https://www.w3schools.com/sql/trysql.asp?fi
 | 6 | `SELECT * FROM Customers WHERE Country = 'Brazil';` | 9 clientes do Brasil | [T6-where-brazil.png](banco-de-dados/T6-where-brazil.png) |
 | 6 | `SELECT CustomerName, Country FROM Customers ORDER BY CustomerName;` | 91 clientes em ordem alfabética | [T6-order-by.png](banco-de-dados/T6-order-by.png) |
 | 6 | `SELECT COUNT(*) AS Total FROM Customers;` | Total = 91 | [T6-count.png](banco-de-dados/T6-count.png) |
-| 7 | `SELECT Country, COUNT(*) AS Total FROM Customers GROUP BY Country ORDER BY Total DESC;` | Quantidade de clientes por país | [T7-group-by.png](banco-de-dados/T7-group-by.png) |
+| 7 | `SELECT Country, COUNT(*) AS Total FROM Customers GROUP BY Country ORDER BY Total DESC;` | 21 países; USA lidera com 13 clientes | [T7-group-by.png](banco-de-dados/T7-group-by.png) |
 
 **Por que cada consulta é útil para um QA** (anotação completa em [Anotacao_Tarefa_6.docx](banco-de-dados/Anotacao_Tarefa_6.docx)):
 
@@ -62,7 +62,7 @@ Banco usado: [W3Schools – Try SQL](https://www.w3schools.com/sql/trysql.asp?fi
 - **ORDER BY:** organizo a lista e confiro se a ordenação mostrada na tela é a mesma do banco.
 - **COUNT:** confiro quantidades. Se havia 91 clientes e eu cadastrei um no teste, o total tem que virar 92. Se continuar 91, o cadastro não foi salvo, e é bug.
 
-**Tarefa 7 · GROUP BY e duplicatas.** O `GROUP BY Country` junta os clientes pelo país e o `COUNT(*)` conta quantos há em cada grupo. Com o `ORDER BY Total DESC`, o país com mais clientes aparece primeiro.
+**Tarefa 7 · GROUP BY e duplicatas.** O `GROUP BY Country` junta os clientes pelo país e o `COUNT(*)` conta quantos há em cada grupo. Com o `ORDER BY Total DESC`, o país com mais clientes aparece primeiro. O resultado trouxe 21 países: USA (13), France (11), Germany (11), Brazil (9) e UK (7) no topo. O Brasil apareceu com 9, o mesmo número que o `WHERE Country = 'Brazil'` da Tarefa 6 retornou, então as duas consultas conferem entre si.
 
 Para achar **cadastros duplicados** num teste real, eu agruparia pelo campo que deveria ser único (e-mail, CPF ou nome) e mostraria só os grupos com mais de um registro:
 
